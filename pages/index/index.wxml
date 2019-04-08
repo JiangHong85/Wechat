@@ -1,0 +1,31 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+  <view class="usermotto">
+    <view>
+    <text>{{motto}}</text>
+    </view>
+  </view>
+  <view class="page-section-spacing">
+        <view class="flex-wrp" style="flex-direction:row;">
+          <view class="flex-item demo-text-2" bindtap="goDynamic">航班动态</view>
+          <view class="flex-item demo-text-1" bindtap='showContent'>航班评价</view>
+          <view class="flex-item demo-text-1" bindtap='showContent'>航延证明</view>
+          <view class="flex-item demo-text-1" bindtap='showContent'>值机选座</view>
+        </view>
+  </view>
+  <view class="page-section-spacing">
+        <view class="flex-wrp" style="flex-direction:row;">
+          <view class="flex-item demo-text-2" bindtap='tapScan'>扫登机牌</view>
+          <view class="flex-item demo-text-1" bindtap='showContent'>电子会员卡</view>
+          <view class="flex-item demo-text-1" bindtap='showContent'>全渠道退改</view>
+          <view class="flex-item demo-text-1" bindtap='showContent'>餐食预订</view>
+        </view>
+  </view>
+</view>

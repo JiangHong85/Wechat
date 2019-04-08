@@ -1,0 +1,2 @@
+<!--个人类型与海外类型的小程序暂不支持使用web-view组件。-->
+<web-view src="http://127.0.0.1:8095/logInfo/redis/logInit"></web-view>
