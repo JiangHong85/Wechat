@@ -3,7 +3,10 @@
     "pages/index/index",
     "pages/logs/logs",
     "pages/outer/outer",
-    "pages/dynamic/dynamic"
+    "pages/dynamic/dynamic",
+    "pages/test/test",
+    "pages/map/map",
+    "pages/discount/discount"
   ],
   "window":{
     "backgroundTextStyle":"light",
@@ -30,5 +33,10 @@
         "text": "我的"
       }
     ]
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
   }
 }

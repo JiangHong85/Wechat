@@ -4,12 +4,11 @@
     <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
     <block wx:else>
       <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
     </block>
   </view>
   <view class="usermotto">
     <view>
-    <text>{{motto}}</text>
+    <text>{{motto}}{{userInfo.nickName}}</text>
     </view>
   </view>
   <view class="page-section-spacing">
@@ -25,7 +24,16 @@
           <view class="flex-item demo-text-2" bindtap='tapScan'>扫登机牌</view>
           <view class="flex-item demo-text-1" bindtap='showContent'>电子会员卡</view>
           <view class="flex-item demo-text-1" bindtap='showContent'>全渠道退改</view>
-          <view class="flex-item demo-text-1" bindtap='showContent'>餐食预订</view>
+          <view class="flex-item demo-text-1" bindtap='goTest'>餐食预订</view>
+        </view>
+  </view>
+  <view class="page-section-spacing">
+        <view class="flex-wrp" style="flex-direction:row;">
+          <view class="flex-item demo-text-1" bindtap='showContent'>机票预订</view>
+          <view class="flex-item demo-text-2" bindtap='goMap'>我的地图</view>
+          <view class="flex-item demo-text-2" bindtap='goDiscount'>特惠专区</view>
+          <view class="flex-item demo-text-1" bindtap='showContent'>行程管理</view>
         </view>
   </view>
 </view>
+

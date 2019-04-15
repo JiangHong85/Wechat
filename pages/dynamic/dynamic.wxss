@@ -24,3 +24,12 @@
   padding-top: 0;
   padding-bottom: 0;
 }
+
+.newContainer {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+} 

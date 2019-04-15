@@ -1,19 +1,42 @@
-<view class="container">
-  <view>
-    <view style="flex-direction:row;">
-      <text>航班号:</text>
-      <view class="weui-cell weui-cell_input">
-      <input class="weui-input" auto-focus placeholder="输入内容"/>
+<view class="newContainer">
+   <image src="../../image/bg.png"></image>
+   <view>
+      <view style="flex-direction:row;">
+        <view class="weui-cell weui-cell_input">
+          <text>航班号:</text>
+          <input class="weui-input" auto-focus placeholder="输入内容" value="3U8888"/>
+        </view>
+      </view>
+      <view style="flex-direction:row;">
+        <view class="weui-cell weui-cell_input">
+          <text>日期:</text>
+          <picker mode="date" value="{{date}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">
+          <view class="weui-input">{{date}}</view>
+          </picker>
+          </view>
       </view>
     </view>
-      <view style="flex-direction:row;">
-      <text>日期:</text>
-      <picker mode="date" value="{{date}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">
-      <view class="weui-input">{{date}}</view>
-      </picker>
+    <view style="flex-direction:row;">
+      <button type="warn" size="mini" bindtap='queryContent' style="margin: 5rpx;">查询</button>
+      <button type="warn" size="mini" bindtap='clearContent' style="margin: 5rpx;">清空</button>
     </view>
     <view>
-      <button type="default" size="mini" bindtap='showContent'>查询</button>
-    </view>
-  </view>
+      <block wx:if="{{hasinfo === false}}">
+      </block>
+      <block wx:if="{{hasinfo === true}}">
+      <view>
+          <text decode="{{true}}">航班号&nbsp;&nbsp;&nbsp;&nbsp;</text>
+          <text decode="{{true}}">航班日期&nbsp;&nbsp;&nbsp;&nbsp;</text>
+          <text decode="{{true}}">航班状态</text>
+      </view>
+      <view>
+          <text decode="{{true}}" style="color: blue;font-size: 30rpx;">3U8888&nbsp;&nbsp;&nbsp;&nbsp;</text>
+          <text decode="{{true}}" style="color: blue;font-size: 30rpx;">2019-04-08&nbsp;&nbsp;&nbsp;&nbsp;</text>
+          <text decode="{{true}}" style="color: blue;font-size: 30rpx;">已降落</text>
+      </view>
+      </block>
+      <view>
+      <navigator style="margin-top: 100px;display: flex;justify-content: center;" open-type="navigateBack">返回首页</navigator> 
+      </view>
+    </view>    
 </view>

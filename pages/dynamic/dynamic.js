@@ -1,21 +1,21 @@
 Page({
   data: {
-    date: '2019-04-01'
+    date: '2019-04-08',
+    hasInfo:false
   },
   bindDateChange(e) {
     this.setData({
       date: e.detail.value
     })
   },
-  showContent() {
-    wx.showToast({
-
-      title: '功能暂未开放',
-
-      icon: 'none',
-
-      duration: 1000//持续的时间
-
+  queryContent() {
+    this.setData({
+      hasinfo: true
+    })
+  },
+  clearContent() {
+    this.setData({
+      hasinfo: false
     })
   }
 })

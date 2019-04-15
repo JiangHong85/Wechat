@@ -29,7 +29,7 @@
 }
 
 .flex-wrp{
-  margin-top: 30rpx;
+  margin-top: 5rpx;
   display:flex;
 }
 

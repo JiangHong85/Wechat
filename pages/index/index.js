@@ -4,20 +4,35 @@ const app = getApp()
 
 Page({
   data: {
-    motto: 'Hi, guest.',
+    motto: 'Hi,',
     userInfo: {},
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
   //事件处理函数
   bindViewTap: function() {
-    wx.navigateTo({
+    wx.switchTab({
       url: '../logs/logs'
     })
   },
   goDynamic: function () {
     wx.navigateTo({
       url: '../dynamic/dynamic'
+    })
+  },
+  goTest: function () {
+    wx.navigateTo({
+      url: '../test/test'
+    })
+  },
+  goMap: function () {
+    wx.navigateTo({
+      url: '../map/map'
+    })
+  },
+  goDiscount: function () {
+    wx.navigateTo({
+      url: '../discount/discount'
     })
   },
   onLoad: function () {
@@ -65,17 +80,25 @@ Page({
   // 点击“扫码”的按钮，触发tapScan回调
 
   tapScan: function () {
-
+    var _this = this;
     wx.scanCode({
-
       success: function (res) {
-
         var scanType = res.scanType; // 扫码类型
         var result = res.result; // 扫码结果
         var path = res.path; //路径
+        var charSet = res.charSet;//字符集
+        var errMsg = 
+        _this.setData({
+          result: result,
+          scanType: scanType,
+          charSet: charSet,
+          //path: path
+        });
+
         console.log("scanType:"+scanType);
         console.log("result:"+result);
         console.log("path:"+path);
+        console.log("charSet:" + charSet);
       }
 
     })
